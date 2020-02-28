@@ -4,20 +4,12 @@
     margin: 16px;
 }
 
-.trigger {
-    font-size: 18px;
-    line-height: 64px;
-    padding: 0 24px;
-    cursor: pointer;
-    transition: color 0.3s;
+.site-layout .site-layout-background {
+    background: #fff;
 }
 
-.trigger:hover {
-    color: #1890ff;
-}
 
-.logo {
-    height: 32px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px;
+.site-card-border-less-wrapper {
+    background: #ececec;
+    padding: 30px;
 }

@@ -1,77 +1,48 @@
 import React, { useState } from 'react'
+import LogoCode from '../../../assets/image/logo.png';
+import { Route, Switch, Link } from 'react-router-dom'
 import './style.css'
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Card } from 'antd';
+import pageRouter from '../../../config/router/index'
 const { Header, Content, Footer, Sider } = Layout;
+
+
 const Dashboard = () => {
-    const [collapsed, setCollapsed] = useState(false)
-
-    const toggle = () => {
-        setCollapsed(!collapsed)
-    }
-
     return (
         <Layout>
             <Sider
                 style={{
                     overflow: 'auto',
                     height: '100vh',
-                    // position: 'fixed',
+                    position: 'fixed',
                     left: 0,
                 }}
-                collapsible collapsed={collapsed} onCollapse={toggle}
             >
                 <div className="logo" />
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-                    <Menu.Item key="1">
-                        <Icon type="user" />
-                        <span className="nav-text">nav 1</span>
-                    </Menu.Item>
-                    <Menu.Item key="2">
-                        <Icon type="video-camera" />
-                        <span className="nav-text">nav 2</span>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <Icon type="upload" />
-                        <span className="nav-text">nav 3</span>
-                    </Menu.Item>
-                    <Menu.Item key="4">
-                        <Icon type="bar-chart" />
-                        <span className="nav-text">nav 4</span>
-                    </Menu.Item>
-                    <Menu.Item key="5">
-                        <Icon type="cloud-o" />
-                        <span className="nav-text">nav 5</span>
-                    </Menu.Item>
-                    <Menu.Item key="6">
-                        <Icon type="appstore-o" />
-                        <span className="nav-text">nav 6</span>
-                    </Menu.Item>
-                    <Menu.Item key="7">
-                        <Icon type="team" />
-                        <span className="nav-text">nav 7</span>
-                    </Menu.Item>
-                    <Menu.Item key="8">
-                        <Icon type="shop" />
-                        <span className="nav-text">nav 8</span>
-                    </Menu.Item>
+                <Menu theme="dark" mode="inline">
+                    {pageRouter.map(menu => (
+                        <Menu.Item key={menu.id}>
+                            <Link to={menu.link}>
+                                {menu.icon}
+                                <span className="nav-text">{menu.name}</span>
+                            </Link>
+                        </Menu.Item>
+                    ))}
                 </Menu>
             </Sider>
-            <Layout>
-                <Header style={{ background: '#fff', padding: 0 }} />
+            <Layout className="site-layout" style={{ marginLeft: 200 }}>
+                <Header className="site-layout-background" style={{ padding: 0 }} />
                 <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-                    <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
-                        <h1>Hello World</h1>
-                        <h1>Hello World</h1>
-                        <h1>Hello World</h1>
-                        <h1>Hello World</h1>
-                        <h1>Hello World</h1>
-                        <h1>Hello World</h1>
-                        <h1>Hello World</h1>
-                        <h1>Hello World</h1>
-                        <h1>Hello World</h1>
-                    </div>
+                    <Card>
+                        <Switch>
+                            <Route path="/" component={() => <h1>Dashboard</h1>} exact />
+                            <Route path="/master" component={() => <h1>Master</h1>}  />
+                            <Route path="/usb" component={() => <h1>Usb</h1>}  />
+                            <Route path="/warning" component={() => <h1>warning</h1>}  />
+                        </Switch>
+                    </Card>
                 </Content>
-                <Footer style={{ textAlign: 'center', background: '#fff', padding: 0 }}>Ant Design ©2018 Created by Ant UED</Footer>
+                <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
         </Layout>
     )
