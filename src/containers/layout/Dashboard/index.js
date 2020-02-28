@@ -36,10 +36,40 @@ const Dashboard = () => {
                     <Card>
                         <Switch>
                             <Route path="/" component={() => <h1>Dashboard</h1>} exact />
-                            <Route path="/master" component={() => <h1>Master</h1>}  />
-                            <Route path="/usb" component={() => <h1>Usb</h1>}  />
-                            <Route path="/warning" component={() => <h1>warning</h1>}  />
+                            <Route path="/master" component={() => <h1>Master</h1>} />
+                            <Route path="/usb" component={() => <h1>Usb</h1>} />
+                            <Route path="/warning" component={() => <h1>warning</h1>} />
                         </Switch>
+                    </Card>
+                    <Card>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                    </Card>
+                    <Card>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                    </Card>
+                    <Card>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
+                        <h1>Hello world</h1>
                     </Card>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
